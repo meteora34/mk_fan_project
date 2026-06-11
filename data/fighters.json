@@ -683,7 +683,7 @@
   "speed": 92,
   "defense": 72,
   "bg": "linear-gradient(135deg, #150010, #25001a)",
-  "img": "img/Khameleon.webp",
+  "img": "img/KHAMELEON.webp",
   "bio": "Последняя выжившая Сауриан женского пола. Меняет облики ниндзя-женщин серии. Эксклюзив Nintendo 64 версии MK Trilogy.",
   "games": ["MK: Trilogy N64 (1996)", "MK: Armageddon (2006)"],
   "fatality": "<strong>RANDOM FATALITY:</strong> Копирует фаталити случайной ниндзя-женщины серии.",
