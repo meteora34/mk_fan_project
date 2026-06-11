@@ -1312,11 +1312,6 @@ function fgFail() {
     btn.disabled    = false;
   }
 
-  // Звук
-  if (misc.soundboard) {
-    const w = misc.soundboard.find(x => x.label === 'WHOOPS!');
-    if (w) playSound(w.file);
-  }
 }
 
 // ── Хелпер экрана ────────────────────────────────────────────

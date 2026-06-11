@@ -64,8 +64,6 @@
     { "label": "BRUTALITY!",        "file": "sounds/brutality.mp3",        "category": "announcer" },
     { "label": "FRIENDSHIP!",       "file": "sounds/friendship.mp3",       "category": "announcer" },
     { "label": "BABALITY!",         "file": "sounds/babality.mp3",         "category": "announcer" },
-    { "label": "WHOOPS!",           "file": "sounds/whoops.mp3",           "category": "announcer" },
-
     { "label": "FEEL THE WRATH",    "file": "sounds/kahn_feel_wrath.mp3",  "category": "kahn" },
     { "label": "IS THAT YOUR BEST?","file": "sounds/kahn_is_that_best.mp3","category": "kahn" },
     { "label": "YOU WILL NEVER WIN","file": "sounds/kahn_you_will_never_win.mp3","category": "kahn" },
