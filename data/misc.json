@@ -1,0 +1,85 @@
+{
+  "quotes": [
+    {
+      "text": "GET OVER HERE!",
+      "source": "— Scorpion"
+    },
+    {
+      "text": "YOUR SOUL IS MINE!",
+      "source": "— Shang Tsung"
+    },
+    {
+      "text": "IT HAS BEGUN!",
+      "source": "— Shang Tsung"
+    },
+    {
+      "text": "FLAWLESS VICTORY",
+      "source": "— Narrator"
+    },
+    {
+      "text": "TEST YOUR MIGHT!",
+      "source": "— Mortal Kombat"
+    },
+    {
+      "text": "TOASTY!",
+      "source": "— Dan Forden"
+    },
+    {
+      "text": "NOTHING IS IMPOSSIBLE",
+      "source": "— Raiden"
+    },
+    {
+      "text": "KOMBAT!",
+      "source": "— Shao Kahn"
+    }
+  ],
+
+  "arenas": [
+    "img/the_subway_small.webp",
+    "img/01_2_kahns_arena_small.png",
+    "img/Mk3_belltower.webp",
+    "img/Arena_thebank.webp",
+    "img/Kombat_Tomb.webp",
+    "img/Dead_Pool.webp",
+    "img/livingForest.gif"
+  ],
+  "logo": "img/dragonlogo.gif",
+  "logoNav": "img/Mortal-Kombat-Logo-700x394.png", 
+  "scorpionHero": "img/573195.png",
+  "counters": {
+    "years": 33,
+    "games": 12,
+    "sales": 75,
+    "fighters": 100
+  },
+
+  "soundtrack": "sounds/select_screen.mp3",
+  "soundboard": [
+    { "label": "FIGHT!",            "file": "sounds/fight.mp3",            "category": "announcer" },
+    { "label": "FATALITY!",         "file": "sounds/fatality.mp3",         "category": "announcer" },
+    { "label": "FINISH HIM!",       "file": "sounds/finish_him.mp3",       "category": "announcer" },
+    { "label": "FLAWLESS VICTORY!", "file": "sounds/flawless_victory.mp3", "category": "announcer" },
+    { "label": "TOASTY!",           "file": "sounds/toasty.mp3",           "category": "announcer" },
+    { "label": "OUTSTANDING!",      "file": "sounds/outstanding.mp3",      "category": "announcer" },
+    { "label": "BRUTALITY!",        "file": "sounds/brutality.mp3",        "category": "announcer" },
+    { "label": "FRIENDSHIP!",       "file": "sounds/friendship.mp3",       "category": "announcer" },
+    { "label": "BABALITY!",         "file": "sounds/babality.mp3",         "category": "announcer" },
+    { "label": "WHOOPS!",           "file": "sounds/whoops.mp3",           "category": "announcer" },
+
+    { "label": "FEEL THE WRATH",    "file": "sounds/kahn_feel_wrath.mp3",  "category": "kahn" },
+    { "label": "IS THAT YOUR BEST?","file": "sounds/kahn_is_that_best.mp3","category": "kahn" },
+    { "label": "YOU WILL NEVER WIN","file": "sounds/kahn_you_will_never_win.mp3","category": "kahn" },
+    { "label": "PATHETIC!",         "file": "sounds/kahn_pathetic.mp3",    "category": "kahn" },
+    { "label": "I WIN!",            "file": "sounds/kahn_i_win.mp3",       "category": "kahn" },
+    { "label": "*СМЕХ КАНА*",       "file": "sounds/kahn_laugh.mp3",       "category": "kahn" },
+    { "label": "GET OVER HERE!",    "file": "sounds/get_over_here.mp3",    "category": "fighters" },
+    { "label": "COME HERE!",        "file": "sounds/come_here.mp3",        "category": "fighters" },
+    { "label": "IT HAS BEGUN!",     "file": "sounds/it-has-begun.mp3",     "category": "fighters" }
+  ],
+  
+  "memes": [
+    "img/meme1.jpg",
+    "img//meme2.jpg",
+    "img//meme3.jpg"
+  ]
+}

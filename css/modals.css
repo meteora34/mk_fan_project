@@ -1,0 +1,59 @@
+/* ============================================================
+   modals.css — все модальные окна (боец, игра, мем, пасхалки)
+   ============================================================ */
+
+/* ── MODAL ── */
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:10000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(6px);padding:20px;}
+  .modal-overlay.active{opacity:1;pointer-events:all;}
+  .modal{background:#080000;border:1px solid rgba(201,160,48,.3);max-width:660px;width:100%;max-height:90vh;overflow-y:auto;position:relative;transform:translateY(24px) scale(.97);transition:transform .3s;}
+  .modal-overlay.active .modal{transform:translateY(0) scale(1);}
+  .modal-header{position:relative;height:200px;overflow:hidden;display:flex;align-items:flex-end;}
+  .modal-arena-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.4);}
+  .modal-sprite{position:absolute;right:32px;bottom:0;height:185px;width:auto;image-rendering:pixelated;filter:drop-shadow(0 0 16px rgba(0,0,0,.9));z-index:1;}
+  .modal-title-block{position:relative;z-index:2;padding:20px 28px;}
+  .modal-name{font-family:'Black Ops One',cursive;font-size:2.2rem;line-height:1;color:#fff;}
+  .modal-sub{font-size:.7rem;letter-spacing:4px;text-transform:uppercase;margin-top:4px;opacity:.8;}
+  .modal-body{padding:28px 32px;}
+  .mtitle{font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:3px;color:#c9a030;margin:20px 0 8px;border-bottom:1px solid rgba(201,160,48,.2);padding-bottom:5px;}
+  .mtitle:first-child{margin-top:0;}
+  .mbio{font-size:.92rem;line-height:1.7;color:rgba(232,213,176,.68);font-weight:300;}
+  .mgames{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
+  .mgame{padding:4px 12px;border:1px solid rgba(201,160,48,.3);font-size:.7rem;letter-spacing:1px;color:#c9a030;background:rgba(201,160,48,.05);font-family:'Rajdhani',sans-serif;font-weight:600;}
+  .mfat{background:rgba(204,0,0,.08);border:1px solid rgba(204,0,0,.3);padding:12px 16px;font-size:.88rem;color:rgba(232,213,176,.68);line-height:1.6;}
+  .mfat strong{color:#cc0000;font-family:'Bebas Neue',cursive;letter-spacing:2px;font-size:.95rem;}
+  .modal-close{position:absolute;top:12px;right:12px;background:rgba(204,0,0,.85);border:none;color:#fff;width:32px;height:32px;font-size:1rem;cursor:pointer;z-index:10;font-family:'Bebas Neue',cursive;transition:background .2s;}
+  .modal-close:hover{background:#cc0000;}
+
+
+  /* ── GAME MODAL ── */
+  .gmodal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.94);z-index:10001;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(8px);padding:20px;}
+  .gmodal-overlay.active{opacity:1;pointer-events:all;}
+  .gmodal{background:#060008;border:1px solid rgba(201,160,48,.35);max-width:720px;width:100%;max-height:92vh;overflow-y:auto;position:relative;transform:translateY(24px) scale(.97);transition:transform .3s;}
+  .gmodal-overlay.active .gmodal{transform:translateY(0) scale(1);}
+  .gmodal-header{padding:36px 36px 24px;border-bottom:1px solid rgba(201,160,48,.15);position:relative;}
+  .gmodal-year{font-family:'Bebas Neue',cursive;font-size:4rem;color:var(--blood);line-height:1;opacity:.5;}
+  .gmodal-title{font-family:'Black Ops One',cursive;font-size:2rem;color:#fff;line-height:1;margin-top:4px;}
+  .gmodal-platform{font-size:.7rem;letter-spacing:4px;color:rgba(201,160,48,.6);text-transform:uppercase;margin-top:8px;}
+  .gmodal-close{position:absolute;top:16px;right:16px;background:rgba(204,0,0,.85);border:none;color:#fff;width:32px;height:32px;font-size:1rem;cursor:pointer;font-family:'Bebas Neue',cursive;transition:background .2s;z-index:10;}
+  .gmodal-close:hover{background:#cc0000;}
+  .gmodal-body{padding:28px 36px 36px;}
+  .gm-section{font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:3px;color:var(--gold);margin:24px 0 10px;border-bottom:1px solid rgba(201,160,48,.2);padding-bottom:5px;}
+  .gm-section:first-child{margin-top:0;}
+  .gm-text{font-size:.92rem;line-height:1.75;color:rgba(232,213,176,.68);font-weight:300;}
+  .gm-roster{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
+  .gm-fighter{padding:4px 12px;border:1px solid rgba(201,160,48,.25);font-size:.72rem;letter-spacing:1px;color:var(--gold);background:rgba(201,160,48,.05);font-family:'Rajdhani',sans-serif;font-weight:600;}
+  .gm-fighter.new{border-color:rgba(204,0,0,.5);color:#ff6644;background:rgba(204,0,0,.06);}
+  .gm-pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:4px;}
+  .gm-pros{background:rgba(0,100,0,.1);border:1px solid rgba(0,180,0,.2);padding:14px 16px;}
+  .gm-cons{background:rgba(100,0,0,.1);border:1px solid rgba(180,0,0,.2);padding:14px 16px;}
+  .gm-pros-title{font-family:'Bebas Neue',cursive;letter-spacing:2px;color:#44cc44;font-size:.85rem;margin-bottom:8px;}
+  .gm-cons-title{font-family:'Bebas Neue',cursive;letter-spacing:2px;color:#cc4444;font-size:.85rem;margin-bottom:8px;}
+  .gm-list{list-style:none;padding:0;}
+  .gm-list li{font-size:.82rem;color:rgba(232,213,176,.65);line-height:1.6;padding-left:12px;position:relative;}
+  .gm-list li::before{content:'•';position:absolute;left:0;}
+  .gm-facts{display:flex;flex-direction:column;gap:8px;margin-top:4px;}
+  .gm-fact{background:rgba(201,160,48,.04);border-left:2px solid var(--gold);padding:10px 14px;font-size:.88rem;color:rgba(232,213,176,.65);line-height:1.6;}
+  .tl-content{cursor:pointer;}
+  .tl-content:hover .tl-game{color:var(--blood);}
+  .tl-hint{font-size:.65rem;letter-spacing:2px;color:rgba(201,160,48,.35);margin-top:6px;text-transform:uppercase;}
+  @media(max-width:600px){.gm-pros-cons{grid-template-columns:1fr;}}

@@ -1,0 +1,730 @@
+[
+  {
+    "game": "Mortal Kombat",
+    "year": "1992",
+    "logo": "img/mk1.png",
+    "platform": "Аркада / Sega Genesis / SNES / Game Boy / PC",
+    "desc": "Революционный файтинг с оцифрованными актёрами потряс аркадный мир и вызвал первый скандал в индустрии.",
+    "fullDesc": "Революционный файтинг от Midway, созданный Эдом Буном и Джоном Тобиасом. Первая игра, использовавшая оцифровку реальных актёров вместо нарисованных спрайтов. Спровоцировала огромный скандал из-за насилия и стала главной причиной создания системы рейтингов ESRB.",
+    "roster": [
+      {
+        "name": "Liu Kang",
+        "isNew": true
+      },
+      {
+        "name": "Johnny Cage",
+        "isNew": true
+      },
+      {
+        "name": "Raiden",
+        "isNew": true
+      },
+      {
+        "name": "Sub-Zero",
+        "isNew": true
+      },
+      {
+        "name": "Scorpion",
+        "isNew": true
+      },
+      {
+        "name": "Sonya Blade",
+        "isNew": true
+      },
+      {
+        "name": "Kano",
+        "isNew": true
+      },
+      {
+        "name": "Shang Tsung",
+        "isNew": true
+      },
+      {
+        "name": "Goro (босс)",
+        "isNew": true
+      }
+    ],
+    "pros": [
+      "Революционная графика с реальными актёрами",
+      "Жёсткие фаталити — шок для индустрии",
+      "Простое управление, высокий порог вхождения",
+      "Культовые персонажи с первой части"
+    ],
+    "cons": [
+      "Маленький ростер — всего 7 бойцов",
+      "Версия SNES была сильно цензурирована",
+      "Геймплей прост по меркам жанра",
+      "Дисбаланс — некоторые бойцы явно слабее"
+    ],
+    "facts": [
+      "🎭 Джонни Кейдж создан по образу Жан-Клода Ван Дамма, который отказался от участия в проекте.",
+      "⚖️ Именно эта игра вместе с Doom стала причиной слушаний в Конгрессе США и появления ESRB в 1994 году.",
+      "👻 Reptile — первый секретный боец в истории файтингов. Чтобы его встретить, нужно было выполнить строгие условия.",
+      "💰 В аркадных автоматах игра собрала более $570 млн — рекорд для файтингов того времени."
+    ]
+  },
+  {
+    "game": "Mortal Kombat II",
+    "year": "1993",
+    "logo": "img/mk2.png",
+    "platform": "Аркада / Sega Genesis / SNES / Game Boy / PC",
+    "desc": "Культовое продолжение с новыми бойцами, аренами и фаталити. Даже больше крови и насилия.",
+    "fullDesc": "Один из лучших файтингов 90-х. Расширенный ростер, новые арены в Аутворлде, более жестокие фаталити и введение дружбы (Friendship) и Babality как шутливой альтернативы. Превзошёл оригинал по всем параметрам.",
+    "roster": [
+      {
+        "name": "Liu Kang",
+        "isNew": false
+      },
+      {
+        "name": "Johnny Cage",
+        "isNew": false
+      },
+      {
+        "name": "Raiden",
+        "isNew": false
+      },
+      {
+        "name": "Sub-Zero",
+        "isNew": false
+      },
+      {
+        "name": "Scorpion",
+        "isNew": false
+      },
+      {
+        "name": "Sonya Blade",
+        "isNew": false
+      },
+      {
+        "name": "Shang Tsung",
+        "isNew": false
+      },
+      {
+        "name": "Kung Lao",
+        "isNew": true
+      },
+      {
+        "name": "Kitana",
+        "isNew": true
+      },
+      {
+        "name": "Mileena",
+        "isNew": true
+      },
+      {
+        "name": "Baraka",
+        "isNew": true
+      },
+      {
+        "name": "Jax",
+        "isNew": true
+      },
+      {
+        "name": "Reptile",
+        "isNew": true
+      },
+      {
+        "name": "Noob Saibot",
+        "isNew": true
+      },
+      {
+        "name": "Jade",
+        "isNew": true
+      },
+      {
+        "name": "Smoke",
+        "isNew": true
+      },
+      {
+        "name": "Kintaro (босс)",
+        "isNew": true
+      },
+      {
+        "name": "Shao Kahn (босс)",
+        "isNew": true
+      }
+    ],
+    "pros": [
+      "Лучший баланс по сравнению с оригиналом",
+      "Разнообразие фаталити — у каждого по 2",
+      "Friendship и Babality — юмор внутри серии",
+      "Великолепные арены Аутворлда"
+    ],
+    "cons": [
+      "Johnny Cage убит в сюжете и убран",
+      "Некоторые порты значительно хуже аркадной версии",
+      "Ограниченный сюжет",
+      "Mileena и Kitana практически идентичны по стилю"
+    ],
+    "facts": [
+      "🏆 Считается лучшей игрой в серии по мнению большинства фанатов классической эпохи.",
+      "🤝 Friendship-финиш появился как ответ критикам насилия — вместо убийства боец дарит подарок.",
+      "👶 Babality превращает противника в плачущего младенца — пасхалка над цензурой SNES.",
+      "🎮 Версия для Sega Genesis продала более 2 миллионов копий — рекорд для консольных файтингов."
+    ]
+  },
+  {
+    "game": "Mortal Kombat 3",
+    "year": "1995",
+    "logo": "img/mk3.png",
+    "platform": "Аркада / Sega Genesis / SNES / PC / PlayStation",
+    "desc": "Триквел с новой системой Run и городским сеттингом. Ultimate MK3 вышел в том же году с полным ростером.",
+    "fullDesc": "Третья часть переносит действие в современный город после вторжения Шао Кана на Землю. Введена механика Run (бег) и Combo система. Ultimate Mortal Kombat 3 вышел в том же году и добавил вернувшихся бойцов.",
+    "roster": [
+      {
+        "name": "Liu Kang",
+        "isNew": false
+      },
+      {
+        "name": "Kung Lao",
+        "isNew": false
+      },
+      {
+        "name": "Sonya Blade",
+        "isNew": false
+      },
+      {
+        "name": "Jax",
+        "isNew": false
+      },
+      {
+        "name": "Shang Tsung",
+        "isNew": false
+      },
+      {
+        "name": "Kano",
+        "isNew": false
+      },
+      {
+        "name": "Sub-Zero",
+        "isNew": true
+      },
+      {
+        "name": "Sektor",
+        "isNew": true
+      },
+      {
+        "name": "Cyrax",
+        "isNew": true
+      },
+      {
+        "name": "Sindel",
+        "isNew": true
+      },
+      {
+        "name": "Nightwolf",
+        "isNew": true
+      },
+      {
+        "name": "Kabal",
+        "isNew": true
+      },
+      {
+        "name": "Stryker",
+        "isNew": true
+      },
+      {
+        "name": "Sheeva",
+        "isNew": true
+      },
+      {
+        "name": "Smoke",
+        "isNew": true
+      },
+      {
+        "name": "Noob Saibot",
+        "isNew": true
+      },
+      {
+        "name": "Ermac",
+        "isNew": true
+      },
+      {
+        "name": "Human Smoke",
+        "isNew": true
+      },
+      {
+        "name": "Motaro (босс)",
+        "isNew": true
+      },
+      {
+        "name": "Shao Kahn (босс)",
+        "isNew": false
+      }
+    ],
+    "pros": [
+      "Механика Run — новый темп боя",
+      "Развитая комбо-система",
+      "Большой ростер в UMK3",
+      "Ввод нескольких секретных бойцов"
+    ],
+    "cons": [
+      "Отсутствие Scorpion и Raiden в MK3 (только в UMK3)",
+      "Stryker — один из нелюбимых бойцов серии",
+      "Городской сеттинг хуже атмосферы Аутворлда",
+      "Графика почти не улучшилась"
+    ],
+    "facts": [
+      "🤖 Cyrax и Sektor — первые киборги в серии, добавленные чтобы объяснить роботизацию клана Лин Куэй.",
+      "🏃 Механика Run появилась по просьбам игроков, недовольных медленным темпом MK2.",
+      "👻 Ermac был слухом и багом ещё с первой игры — в MK3 его наконец сделали официальным.",
+      "🎮 UMK3 вышел всего через несколько месяцев после MK3 и фактически заменил её."
+    ]
+  },
+  {
+    "game": "Mortal Kombat 4",
+    "year": "1997",
+    "logo": "img/mk4.png",
+    "platform": "Аркада / Nintendo 64 / PlayStation / PC",
+    "desc": "Первый переход в полное 3D. Новые персонажи, система оружия, новый движок.",
+    "fullDesc": "Первый переход серии в полное 3D на движке Acclaim. Введено использование оружия в бою. Графика устарела быстро, но игра стала важным шагом в эволюции серии.",
+    "roster": [
+      {
+        "name": "Liu Kang",
+        "isNew": false
+      },
+      {
+        "name": "Raiden",
+        "isNew": false
+      },
+      {
+        "name": "Sub-Zero",
+        "isNew": false
+      },
+      {
+        "name": "Scorpion",
+        "isNew": false
+      },
+      {
+        "name": "Sonya Blade",
+        "isNew": false
+      },
+      {
+        "name": "Shang Tsung",
+        "isNew": false
+      },
+      {
+        "name": "Reptile",
+        "isNew": false
+      },
+      {
+        "name": "Noob Saibot",
+        "isNew": false
+      },
+      {
+        "name": "Quan Chi",
+        "isNew": true
+      },
+      {
+        "name": "Fujin",
+        "isNew": true
+      },
+      {
+        "name": "Kai",
+        "isNew": true
+      },
+      {
+        "name": "Tanya",
+        "isNew": true
+      },
+      {
+        "name": "Jarek",
+        "isNew": true
+      },
+      {
+        "name": "Reiko",
+        "isNew": true
+      },
+      {
+        "name": "Meat",
+        "isNew": true
+      },
+      {
+        "name": "Goro",
+        "isNew": true
+      },
+      {
+        "name": "Shinnok (босс)",
+        "isNew": true
+      }
+    ],
+    "pros": [
+      "Первое полноценное 3D в серии",
+      "Система оружия добавляет глубину",
+      "Новые интересные персонажи (Quan Chi, Fujin)",
+      "Режим Tower с концовками"
+    ],
+    "cons": [
+      "3D-графика быстро устарела",
+      "Потеря атмосферы пиксельной классики",
+      "Деревянная анимация персонажей",
+      "Слабый сюжет по меркам серии"
+    ],
+    "facts": [
+      "⚔️ Первая игра серии с системой подбираемого оружия — можно было вооружиться мечом или булавой.",
+      "💀 Quan Chi дебютировал в мультсериале MK: Defenders of the Realm за год до игры.",
+      "🥩 Meat — секретный боец без кожи, пасхалка разработчиков. Никакого бэкграунда, просто мясо.",
+      "🎮 Версия для N64 имела эксклюзивного персонажа — Goro, которого не было в PS1-версии."
+    ]
+  },
+  {
+    "game": "MK: Deadly Alliance",
+    "year": "2002",
+    "logo": "img/mk_deadly_alliance.png",
+    "desc": "Тёмная глава: Шан Цзун и Куан Чи объединились и убили Лю Кана. Новый движок, стили боя.",
+    "platform": "",
+    "fullDesc": "Тёмная глава: Шан Цзун и Куан Чи объединились и убили Лю Кана. Новый движок, стили боя.",
+    "roster": [],
+    "pros": [],
+    "cons": [],
+    "facts": []
+  },
+  {
+    "game": "MK: Deception",
+    "year": "2004",
+    "logo": "img/mk_deception.png",
+    "desc": "Онага — Король Дракона — вернулся. Режим Konquest, шахматный MK, онлайн на PS2/Xbox.",
+    "platform": "",
+    "fullDesc": "Онага — Король Дракона — вернулся. Режим Konquest, шахматный MK, онлайн на PS2/Xbox.",
+    "roster": [],
+    "pros": [],
+    "cons": [],
+    "facts": []
+  },
+  {
+    "game": "MK: Armageddon",
+    "year": "2006",
+    "logo": "img/mk_armageddon.png",
+    "desc": "Абсолютно весь ростер серии — более 60 бойцов. Финал эры PS2/Xbox.",
+    "platform": "",
+    "fullDesc": "Абсолютно весь ростер серии — более 60 бойцов. Финал эры PS2/Xbox.",
+    "roster": [],
+    "pros": [],
+    "cons": [],
+    "facts": []
+  },
+  {
+    "game": "Mortal Kombat 9",
+    "year": "2011",
+    "logo": "img/mk9.png",
+    "platform": "PlayStation 3 / Xbox 360 / PC",
+    "desc": "Перезагрузка серии от NetherRealm. Кинематографичный сюжет, X-Ray атаки, возврат к 2.5D.",
+    "fullDesc": "Перезагрузка серии от NetherRealm Studios (бывший Midway). Возврат к 2.5D геймплею, кинематографичный сюжетный режим, X-Ray атаки. Считается одной из лучших игр серии и настоящим возрождением франшизы.",
+    "roster": [
+      {
+        "name": "Scorpion",
+        "isNew": false
+      },
+      {
+        "name": "Liu Kang",
+        "isNew": false
+      },
+      {
+        "name": "Kung Lao",
+        "isNew": false
+      },
+      {
+        "name": "Sub-Zero",
+        "isNew": false
+      },
+      {
+        "name": "Sindel",
+        "isNew": false
+      },
+      {
+        "name": "Ermac",
+        "isNew": false
+      },
+      {
+        "name": "Reptile",
+        "isNew": false
+      },
+      {
+        "name": "Kitana",
+        "isNew": false
+      },
+      {
+        "name": "Johnny Cage",
+        "isNew": false
+      },
+      {
+        "name": "Jade",
+        "isNew": false
+      },
+      {
+        "name": "Mileena",
+        "isNew": false
+      },
+      {
+        "name": "Nightwolf",
+        "isNew": false
+      },
+      {
+        "name": "Cyrax",
+        "isNew": false
+      },
+      {
+        "name": "Noob Saibot",
+        "isNew": false
+      },
+      {
+        "name": "Smoke",
+        "isNew": false
+      },
+      {
+        "name": "Sektor",
+        "isNew": false
+      },
+      {
+        "name": "Sonya Blade",
+        "isNew": false
+      },
+      {
+        "name": "Jax",
+        "isNew": false
+      },
+      {
+        "name": "Kano",
+        "isNew": false
+      },
+      {
+        "name": "Stryker",
+        "isNew": false
+      },
+      {
+        "name": "Shang Tsung",
+        "isNew": false
+      },
+      {
+        "name": "Baraka",
+        "isNew": false
+      },
+      {
+        "name": "Kabal",
+        "isNew": false
+      },
+      {
+        "name": "Raiden",
+        "isNew": false
+      },
+      {
+        "name": "Cyber Sub-Zero",
+        "isNew": true
+      },
+      {
+        "name": "Sheeva",
+        "isNew": false
+      },
+      {
+        "name": "Quan Chi",
+        "isNew": false
+      },
+      {
+        "name": "Goro (босс)",
+        "isNew": false
+      },
+      {
+        "name": "Kintaro (босс)",
+        "isNew": false
+      },
+      {
+        "name": "Shao Kahn (босс)",
+        "isNew": false
+      },
+      {
+        "name": "Kratos (PS3)",
+        "isNew": true
+      }
+    ],
+    "pros": [
+      "Лучший сюжетный режим в истории файтингов",
+      "X-Ray атаки — зрелищная механика",
+      "Огромный ростер классических бойцов",
+      "Отличный онлайн и аркадная лестница"
+    ],
+    "cons": [
+      "Слабый баланс онлайна на релизе",
+      "Некоторые концовки аркадного режима нелогичны",
+      "DLC-персонажи ощущаются неполноценными",
+      "Сюжет убивает слишком многих любимых героев"
+    ],
+    "facts": [
+      "🎬 Сюжетный режим длится около 6 часов и снят как полноценный фильм — прецедент для жанра.",
+      "⚡ X-Ray атаки показывают переломы костей в рентгеновском режиме — новый уровень жестокости.",
+      "🏛️ Kratos из God of War — эксклюзив PS3, один из лучших гостевых бойцов в истории серии.",
+      "📺 Именно MK9 вернул серию после 5 лет отсутствия и собрал более 3 млн продаж."
+    ]
+  },
+  {
+    "game": "Mortal Kombat X",
+    "year": "2015",
+    "logo": "img/mkx.png",
+    "desc": "Новое поколение бойцов рядом со старыми. Варианты персонажей, жесточайшие фаталити серии.",
+    "platform": "",
+    "fullDesc": "Новое поколение бойцов рядом со старыми. Варианты персонажей, жесточайшие фаталити серии.",
+    "roster": [],
+    "pros": [],
+    "cons": [],
+    "facts": []
+  },
+  {
+    "game": "Mortal Kombat 11",
+    "year": "2019",
+    "logo": "img/mk11.png",
+    "platform": "PS4 / Xbox One / PC / Nintendo Switch / PS5 / Xbox Series",
+    "desc": "Фотореализм, кастомизация, путешествия во времени. Самая продаваемая игра серии.",
+    "fullDesc": "Визуальная вершина серии с фотореалистичной графикой. Кастомизация экипировки, механика Fatal Blow на замену X-Ray. Масштабный сюжет с путешествиями во времени. Огромная поддержка DLC с гостевыми бойцами.",
+    "roster": [
+      {
+        "name": "Scorpion",
+        "isNew": false
+      },
+      {
+        "name": "Liu Kang",
+        "isNew": false
+      },
+      {
+        "name": "Kung Lao",
+        "isNew": false
+      },
+      {
+        "name": "Sub-Zero",
+        "isNew": false
+      },
+      {
+        "name": "Sonya Blade",
+        "isNew": false
+      },
+      {
+        "name": "Raiden",
+        "isNew": false
+      },
+      {
+        "name": "Johnny Cage",
+        "isNew": false
+      },
+      {
+        "name": "Jade",
+        "isNew": false
+      },
+      {
+        "name": "Kano",
+        "isNew": false
+      },
+      {
+        "name": "Baraka",
+        "isNew": false
+      },
+      {
+        "name": "Skarlet",
+        "isNew": false
+      },
+      {
+        "name": "Kabal",
+        "isNew": false
+      },
+      {
+        "name": "Noob Saibot",
+        "isNew": false
+      },
+      {
+        "name": "Shao Kahn",
+        "isNew": false
+      },
+      {
+        "name": "Kitana",
+        "isNew": false
+      },
+      {
+        "name": "Geras",
+        "isNew": true
+      },
+      {
+        "name": "Kotal Kahn",
+        "isNew": false
+      },
+      {
+        "name": "Cassie Cage",
+        "isNew": false
+      },
+      {
+        "name": "Jax",
+        "isNew": false
+      },
+      {
+        "name": "Jacqui Briggs",
+        "isNew": false
+      },
+      {
+        "name": "Takeda",
+        "isNew": false
+      },
+      {
+        "name": "Erron Black",
+        "isNew": false
+      },
+      {
+        "name": "Terminator T-800",
+        "isNew": true
+      },
+      {
+        "name": "Joker",
+        "isNew": true
+      },
+      {
+        "name": "Spawn",
+        "isNew": true
+      },
+      {
+        "name": "RoboCop",
+        "isNew": true
+      },
+      {
+        "name": "Rambo",
+        "isNew": true
+      },
+      {
+        "name": "Mileena",
+        "isNew": true
+      },
+      {
+        "name": "Rain",
+        "isNew": true
+      },
+      {
+        "name": "Shang Tsung",
+        "isNew": true
+      }
+    ],
+    "pros": [
+      "Фотореалистичная графика — лучшая в серии",
+      "Глубокая кастомизация бойцов",
+      "Эпический сюжет с путешествиями во времени",
+      "Отличные гостевые персонажи (Terminator, Joker, Spawn)"
+    ],
+    "cons": [
+      "Агрессивная монетизация и гринд кристаллов",
+      "Башни времени требуют сотни часов",
+      "Онлайн на Switch значительно хуже",
+      "Некоторые классические бойцы отсутствуют"
+    ],
+    "facts": [
+      "🤖 Terminator, RoboCop и Rambo — все три культовых героя Арнольда Шварценеггера и Сильвестра Сталлоне в одной игре.",
+      "⏰ Сюжет охватывает всю временную шкалу серии — по сути перезапись истории MK с нуля.",
+      "🃏 Joker озвучен Ричардом Эпкаром — тем же актёром, что играл Джокера в Batman: Arkham.",
+      "💰 Стала самой продаваемой игрой серии — более 12 миллионов копий за первые годы."
+    ]
+  },
+  {
+    "game": "Mortal Kombat 1",
+    "year": "2023",
+    "logo": "img/mk1_2023.png",
+    "desc": "Перезапуск вселенной Лю Каном-богом. Камео-система, новый канон, свежий взгляд на классических бойцов.",
+    "platform": "",
+    "fullDesc": "Перезапуск вселенной Лю Каном-богом. Камео-система, новый канон, свежий взгляд на классических бойцов.",
+    "roster": [],
+    "pros": [],
+    "cons": [],
+    "facts": []
+  }
+]

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MORTAL KOMBAT — FIGHT!</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/modals.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" id="navLogo">MK</div>
+  
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#fighters"   onclick="closeNav()">Бойцы</a></li>
+    <li><a href="#history-hub" onclick="closeNav()">История</a></li>
+    <li><a href="#fatality"   onclick="closeNav()">Fatality</a></li>
+    <li><a href="#arena-hub"  onclick="closeNav()">Арена</a></li>
+    <li><a href="#media-hub"  onclick="closeNav()">Медиа</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <button id="musicToggle" onclick="toggleBgMusic()"
+      style="background:none;border:1px solid rgba(201,160,48,0.3);
+             color:var(--gold);padding:6px 12px;cursor:pointer;
+             font-size:1rem;letter-spacing:2px;">🔊
+    </button>
+    <button class="burger" id="burgerBtn" onclick="toggleNav()"
+      aria-label="Меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Оверлей для закрытия меню -->
+<div id="navOverlay" onclick="closeNav()"></div>
+
+<!-- HERO -->
+<section id="hero">
+  <img id="heroScorpion" src="" alt="Scorpion" style="
+  position:absolute;
+  right:0;
+  bottom:0;
+  height:100vh;
+  width:60vw;
+  object-fit:cover;
+  object-position:left center;
+  mix-blend-mode:lighten;
+  opacity:0.6;
+  pointer-events:none;
+  filter:drop-shadow(-30px 0 60px rgba(255,136,0,0.2));
+  animation:scorpion-float 6s ease-in-out infinite;
+  z-index:0;">
+
+  <div class="hero-bg-glow"></div>
+  <div class="lightning-container">
+    <div class="lightning"></div>
+    <div class="lightning"></div>
+    <div class="lightning"></div>
+  </div>
+
+  <div class="hero-eyebrow">1992 — Легенда не умирает</div>
+
+  <img id="heroLogo" src="" alt="MK Dragon"
+    style="width:clamp(140px,18vw,240px);height:auto;
+           animation:dragon-pulse 3s ease-in-out infinite, fadeInUp 1s 0.7s both;
+           filter:drop-shadow(0 0 40px rgba(201,160,48,0.7))">
+
+  <h1 class="hero-title">
+    <span class="mortal glitch" data-text="MORTAL">MORTAL</span>
+    <span class="kombat glitch" data-text="KOMBAT">KOMBAT</span>
+  </h1>
+  <p class="hero-subtitle">Finish Him</p>
+
+  <div class="hero-cta">
+    <a href="#fighters" class="btn btn-primary">Бойцы</a>
+    <a href="#history-hub" class="btn btn-outline">История серии</a>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- FIGHTERS -->
+<section id="fighters" style="position:relative;">
+  <div class="fighters-header">
+    <div class="section-label">Легендарные воины</div>
+    <h2 class="section-title">Выбери <span>Бойца</span></h2>
+    <div class="divider" style="margin:24px auto"></div>
+    <p style="color:rgba(232,213,176,0.4);font-size:.8rem;letter-spacing:3px;">
+      2× КЛИК НА БОЙЦА — БИОГРАФИЯ
+    </p>
+    <button onclick="randomFighter()"
+      style="margin-top:16px;padding:12px 32px;
+             font-family:'Bebas Neue',cursive;font-size:1.1rem;
+             letter-spacing:4px;cursor:pointer;
+             background:linear-gradient(135deg,#1a0000,#330000);
+             color:var(--gold);
+             border:1px solid rgba(201,160,48,0.3);
+             clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);
+             transition:all 0.3s;">
+      🎲 СЛУЧАЙНЫЙ БОЕЦ
+    </button>
+  </div>
+  <div class="fighter-search-wrap">
+  <input type="text" id="fighterSearch"
+    placeholder="ПОИСК БОЙЦА..."
+    oninput="filterFighters(this.value)"
+    autocomplete="off"
+    style="width:100%;max-width:400px;
+           padding:12px 20px;
+           font-family:'Bebas Neue',cursive;
+           font-size:1.1rem;letter-spacing:3px;
+           background:rgba(10,0,0,0.8);
+           border:1px solid rgba(201,160,48,0.3);
+           color:var(--gold);
+           outline:none;
+           clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);
+           transition:border-color 0.3s;">
+  <div id="fighterSearchEmpty"
+    style="display:none;margin-top:40px;
+           font-family:'Black Ops One',cursive;
+           font-size:1.5rem;letter-spacing:4px;
+           color:rgba(232,213,176,0.2);
+           text-align:center;">
+    БОЕЦ НЕ НАЙДЕН
+  </div>
+</div>
+
+  <div class="fighters-grid" id="fightersGrid"></div>
+
+</section>
+
+<!-- ИСТОРИЯ HUB — Timeline + Lore -->
+<section id="history-hub" class="hub-section" style="position:relative;">
+  <div class="section-label">Вселенная МК</div>
+  <h2 class="section-title">История & <span>Лор</span></h2>
+  <div class="divider" style="margin:24px auto 0"></div>
+
+  <div class="hub-tabs">
+    <button class="hub-tab active" onclick="switchHub('history-hub', 'tab-timeline', this)">
+      📜 История Серии
+    </button>
+    <button class="hub-tab" onclick="switchHub('history-hub', 'tab-lore', this)">
+      📖 Лор & Вселенная
+    </button>
+  </div>
+
+  <div class="hub-panel active" id="tab-timeline">
+    <div class="timeline-wrap" id="timelineWrap"></div>
+  </div>
+
+  <div class="hub-panel" id="tab-lore">
+    <div id="loreTabs" class="lore-tabs"></div>
+    <div id="loreContent" class="lore-content"></div>
+  </div>
+</section>
+
+<!-- FATALITY секция — атмосферная, отдельная -->
+<section id="fatality" style="position:relative;">
+  <div class="fatality-bg"></div>
+  <span class="fatality-big">FATALITY!</span>
+
+  <div class="quotes-container">
+    <div>
+      <div class="quote-text" id="quoteText"></div>
+      <span class="quote-source" id="quoteSource"></span>
+    </div>
+  </div>
+
+  <div class="fatality-counter">
+    <div class="counter-item">
+      <span class="counter-num" id="cnt1">0</span>
+      <div class="counter-label">Лет Истории</div>
+    </div>
+    <div class="counter-item">
+      <span class="counter-num" id="cnt2">0</span>
+      <div class="counter-label">Игр в Серии</div>
+    </div>
+    <div class="counter-item">
+      <span class="counter-num" id="cnt3">0</span>
+      <div class="counter-label">Млн. Копий</div>
+    </div>
+    <div class="counter-item">
+      <span class="counter-num" id="cnt4">0</span>
+      <div class="counter-label">Уникальных Бойцов</div>
+    </div>
+  </div>
+</section>
+
+<!-- АРЕНА HUB — VS Simulator + Fatality Generator -->
+<section id="arena-hub" class="hub-section" style="position:relative;">
+  <!-- Луна на арене -->
+  <div id="pitMoon" onclick="moonClick()"
+    style="position:absolute;top:30px;right:80px;
+           width:48px;height:48px;
+           background:radial-gradient(circle at 35% 35%, #fffde0, #f0c040 40%, #c8860a);
+           border-radius:50%;
+           box-shadow:0 0 20px rgba(240,192,64,0.6);
+           cursor:pointer;z-index:5;
+           transition:box-shadow 0.3s;">
+  </div>
+  <div id="moonSilhouette"
+    style="position:absolute;top:18px;font-size:2rem;
+           pointer-events:none;z-index:6;opacity:0;
+           transition:opacity 0.3s;">
+    🧙‍♀️
+  </div>
+
+  <div class="section-label">Интерактив</div>
+  <h2 class="section-title">Войди <span>В Арену</span></h2>
+  <div class="divider" style="margin:24px auto 0"></div>
+
+  <div class="hub-tabs">
+    <button class="hub-tab active" onclick="switchHub('arena-hub', 'tab-arena', this)">
+      ⚔️ Бой
+    </button>
+    <button class="hub-tab" onclick="switchHub('arena-hub', 'tab-fatality-gen', this)">
+      💀 Генератор Fatality
+    </button>
+  </div>
+
+  <!-- VS Simulator -->
+  <div class="hub-panel active" id="tab-arena">
+    <div id="arenaBg" style="
+      position:absolute;inset:0;background-size:cover;
+      background-position:center;opacity:0.12;pointer-events:none;z-index:0;"></div>
+    <div class="arena-container" style="position:relative;z-index:1;">
+      <div class="vs-display">
+        <div class="vs-fighter p1" id="p1">
+          <img class="vs-sprite" id="p1emoji" src="" alt="P1"
+            style="height:160px;width:auto;image-rendering:pixelated;
+                   filter:drop-shadow(0 0 15px rgba(204,0,0,0.5))">
+          <div class="vs-name" id="p1name" style="color:var(--blood)">SCORPION</div>
+          <div class="health-bar-container">
+            <div class="health-bar-fill" id="p1health" style="width:100%"></div>
+            <span class="health-pct" id="p1pct">100%</span>
+          </div>
+        </div>
+
+        <div class="vs-label">VS</div>
+
+        <div class="vs-fighter p2" id="p2">
+          <img class="vs-sprite" id="p2emoji" src="" alt="P2"
+            style="height:160px;width:auto;image-rendering:pixelated;
+                   filter:drop-shadow(0 0 15px rgba(68,136,204,0.5))">
+          <div class="vs-name" id="p2name" style="color:#4488cc">SUB-ZERO</div>
+          <div class="health-bar-container">
+            <div class="health-bar-fill" id="p2health"
+              style="width:100%;background:linear-gradient(to left,#0055cc,#4488ff)"></div>
+            <span class="health-pct" id="p2pct">100%</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="fight-btn" id="fightBtn" onclick="startFight()">FIGHT!</button>
+      <div class="fight-result" id="fightResult"></div>
+
+      <div style="display:flex;justify-content:center;gap:60px;margin-top:32px;">
+        <div style="text-align:center;">
+          <div id="winStreak"
+            style="font-family:'Bebas Neue',cursive;font-size:3rem;
+                   color:var(--blood);line-height:1;
+                   text-shadow:0 0 20px rgba(204,0,0,0.5);">0</div>
+          <div style="font-size:.65rem;letter-spacing:3px;
+                      color:rgba(232,213,176,0.4);margin-top:4px;">СЕРИЯ ПОБЕД</div>
+        </div>
+        <div style="text-align:center;">
+          <div id="bestStreak"
+            style="font-family:'Bebas Neue',cursive;font-size:3rem;
+                   color:var(--gold);line-height:1;
+                   text-shadow:0 0 20px rgba(201,160,48,0.5);">0</div>
+          <div style="font-size:.65rem;letter-spacing:3px;
+                      color:rgba(232,213,176,0.4);margin-top:4px;">РЕКОРД СЕССИИ</div>
+        </div>
+        <div style="text-align:center;">
+          <div id="totalFights"
+            style="font-family:'Bebas Neue',cursive;font-size:3rem;
+                   color:rgba(232,213,176,0.3);line-height:1;">0</div>
+          <div style="font-size:.65rem;letter-spacing:3px;
+                      color:rgba(232,213,176,0.4);margin-top:4px;">ВСЕГО БОЁВ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fatality Generator -->
+  <div class="hub-panel" id="tab-fatality-gen">
+    <div class="fg-container">
+      <div class="fg-select-wrap">
+        <div class="fg-label">ВЫБЕРИ БОЙЦА</div>
+        <div class="fg-fighters" id="fgFighters"></div>
+      </div>
+
+      <div class="fg-arena" id="fgArena">
+        <div class="fg-top-bar">
+          <div class="fg-health-wrap">
+            <div class="fg-name" id="fgP1Name">???</div>
+            <div class="fg-health-bar">
+              <div class="fg-health-fill" id="fgHealthFill" style="width:100%"></div>
+            </div>
+          </div>
+          <div class="fg-timer" id="fgTimer">5</div>
+          <div class="fg-health-wrap fg-enemy">
+            <div class="fg-name fg-name-right">ENEMY</div>
+            <div class="fg-health-bar">
+              <div class="fg-health-fill fg-health-enemy" style="width:15%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fg-fighters-arena">
+          <img class="fg-sprite-player" id="fgSprite" src="" alt="">
+          <div class="fg-enemy-sprite">💀</div>
+        </div>
+
+        <div class="fg-screen" id="fgScreen">
+          <div class="fg-screen-title" id="fgScreenTitle">FINISH HIM!</div>
+          <div class="fg-screen-sub" id="fgScreenSub">Введи комбо</div>
+        </div>
+
+        <div class="fg-combo-strip" id="fgComboStrip"></div>
+
+        <button class="fg-start-btn" id="fgStartBtn" onclick="fgStart()">
+          FINISH HIM!
+        </button>
+
+        <div class="fg-result" id="fgResult"></div>
+      </div>
+
+      <div class="fg-gamepad" id="fgGamepad">
+        <div class="fg-dpad">
+          <button class="fg-dpad-btn fg-dpad-up"    ontouchstart="fgInput('Up')"    onmousedown="fgInput('Up')">▲</button>
+          <button class="fg-dpad-btn fg-dpad-left"  ontouchstart="fgInput('Left')"  onmousedown="fgInput('Left')">◀</button>
+          <button class="fg-dpad-btn fg-dpad-center"></button>
+          <button class="fg-dpad-btn fg-dpad-right" ontouchstart="fgInput('Right')" onmousedown="fgInput('Right')">▶</button>
+          <button class="fg-dpad-btn fg-dpad-down"  ontouchstart="fgInput('Down')"  onmousedown="fgInput('Down')">▼</button>
+        </div>
+        <div class="fg-action-btns">
+          <div class="fg-btn-row">
+            <button class="fg-action-btn fg-btn-hp" ontouchstart="fgInput('HighPunch')" onmousedown="fgInput('HighPunch')">HP</button>
+            <button class="fg-action-btn fg-btn-hk" ontouchstart="fgInput('HighKick')"  onmousedown="fgInput('HighKick')">HK</button>
+          </div>
+          <div class="fg-btn-row">
+            <button class="fg-action-btn fg-btn-lp" ontouchstart="fgInput('LowPunch')"  onmousedown="fgInput('LowPunch')">LP</button>
+            <button class="fg-action-btn fg-btn-lk" ontouchstart="fgInput('LowKick')"   onmousedown="fgInput('LowKick')">LK</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="fg-keyboard-hint" id="fgKeyHint">
+        <div class="fg-hint-title">КЛАВИШИ</div>
+        <div class="fg-hint-keys">
+          <span class="fg-key">↑</span><span class="fg-key-label">Up</span>
+          <span class="fg-key">↓</span><span class="fg-key-label">Down</span>
+          <span class="fg-key">←</span><span class="fg-key-label">Left</span>
+          <span class="fg-key">→</span><span class="fg-key-label">Right</span>
+          <span class="fg-key">A</span><span class="fg-key-label">LP</span>
+          <span class="fg-key">S</span><span class="fg-key-label">HP</span>
+          <span class="fg-key">Z</span><span class="fg-key-label">LK</span>
+          <span class="fg-key">X</span><span class="fg-key-label">HK</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- МЕДИА HUB — Звуки + Мемы -->
+<section id="media-hub" class="hub-section" style="position:relative;">
+  <div class="section-label">Культура</div>
+  <h2 class="section-title">Медиа & <span>Звуки</span></h2>
+  <div class="divider" style="margin:24px auto 0"></div>
+
+  <div class="hub-tabs">
+    <button class="hub-tab active" onclick="switchHub('media-hub', 'tab-sounds', this)">
+      🔊 Звуки
+    </button>
+    <button class="hub-tab" onclick="switchHub('media-hub', 'tab-memes', this)">
+      😂 Мемы
+    </button>
+  </div>
+
+  <div class="hub-panel active" id="tab-sounds">
+    <div id="soundboard"></div>
+  </div>
+
+  <div class="hub-panel" id="tab-memes">
+    <div class="memes-grid" id="memesGrid"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="position:relative;">
+  <img id="footerDragon" src="" alt=""
+    style="width:100px;height:auto;opacity:0.1;
+           position:absolute;top:50%;left:50%;
+           transform:translate(-50%,-50%);pointer-events:none;">
+  <div class="footer-logo">MORTAL KOMBAT</div>
+  <div class="footer-tagline">There Is No Knowledge That Is Not Power</div>
+  <div class="footer-note">
+    Фан-сайт. Mortal Kombat © NetherRealm Studios / WB Games.
+    Все права принадлежат правообладателям.
+  </div>
+</footer>
+
+<!-- FIGHTER MODAL -->
+<div class="modal-overlay" id="modalOverlay"
+     onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-header">
+      <div class="modal-arena-bg" id="mArenaBg"></div>
+      <img class="modal-sprite" id="mSprite" src="" alt="">
+      <div class="modal-title-block">
+        <div class="modal-name" id="mName"></div>
+        <div class="modal-sub"  id="mSub"></div>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="mtitle">БИОГРАФИЯ</div>
+      <div class="mbio" id="mBio"></div>
+      <div class="mtitle">ПОЯВЛЕНИЯ В ИГРАХ</div>
+      <div class="mgames" id="mGames"></div>
+      <div class="mtitle">ФАТАЛИТИ</div>
+      <div class="mfat" id="mFat"></div>
+    </div>
+  </div>
+</div>
+
+<!-- GAME MODAL -->
+<div class="gmodal-overlay" id="gmodalOverlay"
+     onclick="if(event.target===this)closeGameModal()">
+  <div class="gmodal">
+    <button class="gmodal-close" onclick="closeGameModal()">✕</button>
+
+    <div class="gmodal-header">
+      <div class="gmodal-year"     id="gmYear"></div>
+      <div class="gmodal-title"    id="gmTitle"></div>
+      <div class="gmodal-platform" id="gmPlatform"></div>
+      <img id="gmLogo" src="" alt=""
+    style="display:none;max-height:48px;max-width:200px;
+           width:auto;object-fit:contain;
+           opacity:0.85;margin-top:12px;">
+    </div>
+
+    <div class="gmodal-body">
+      <div class="gm-section">О ИГРЕ</div>
+      <div class="gm-text" id="gmDesc"></div>
+      <div class="gm-section">РОСТЕР БОЙЦОВ</div>
+      <div class="gm-text" style="font-size:.75rem;color:rgba(201,160,48,.4);margin-bottom:8px;">
+        🔴 — новые бойцы в этой части
+      </div>
+      <div class="gm-roster" id="gmRoster"></div>
+      <div class="gm-section">ПЛЮСЫ И МИНУСЫ</div>
+      <div class="gm-pros-cons">
+        <div class="gm-pros">
+          <div class="gm-pros-title">✚ Плюсы</div>
+          <ul class="gm-list" id="gmPros"></ul>
+        </div>
+        <div class="gm-cons">
+          <div class="gm-cons-title">✖ Минусы</div>
+          <ul class="gm-list" id="gmCons"></ul>
+        </div>
+      </div>
+      <div class="gm-section">ИНТЕРЕСНЫЕ ФАКТЫ</div>
+      <div class="gm-facts" id="gmFacts"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Meme fullscreen -->
+<div id="memeOverlay"
+     class="meme-flex-center"
+     style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:10002;"
+     onclick="closeMeme()">
+  <img id="memeImg" src="" alt=""
+    style="max-width:90vw;max-height:90vh;object-fit:contain;">
+</div>
+
+<!-- Пасхалка оверлей -->
+<div id="easterOverlay"
+  style="display:none;position:fixed;inset:0;
+         background:rgba(0,0,0,0);
+         z-index:20000;pointer-events:none;
+         flex-direction:column;align-items:center;justify-content:center;">
+  <div id="easterContent"
+    style="text-align:center;transform:scale(0);transition:transform 0.3s;">
+    <img id="easterSprite" src="" alt=""
+      style="height:280px;width:auto;image-rendering:pixelated;
+             filter:drop-shadow(0 0 40px currentColor);">
+    <div id="easterName"
+      style="font-family:'Black Ops One',cursive;
+             font-size:3rem;letter-spacing:6px;
+             margin-top:20px;text-shadow:0 0 30px currentColor;">
+    </div>
+    <div id="easterMsg"
+      style="font-family:'Bebas Neue',cursive;
+             font-size:1.2rem;letter-spacing:4px;
+             color:rgba(232,213,176,0.6);margin-top:8px;">
+    </div>
+  </div>
+</div>
+
+<!-- Glitch overlay -->
+<div id="glitchOverlay"
+  style="display:none;position:fixed;inset:0;z-index:19999;
+         pointer-events:none;mix-blend-mode:screen;">
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

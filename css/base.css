@@ -1,0 +1,231 @@
+/* ============================================================
+   base.css — переменные, сброс, навбар, анимации
+   ============================================================ */
+
+:root {
+    --blood: #cc0000;
+    --fire: #ff4400;
+    --gold: #c9a030;
+    --gold-light: #f0c040;
+    --dark: #050505;
+    --darker: #000000;
+    --grey: #1a1a1a;
+    --text: #e8d5b0;
+    --neon-red: #ff0030;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--darker);
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+    cursor: crosshair;
+  }
+
+
+  .fighter-sprite {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 75%;
+    width: auto;
+    object-fit: contain;
+    object-position: bottom;
+    image-rendering: pixelated;
+    transition: transform 0.4s ease, filter 0.4s;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.9));
+    z-index: 1;
+  }
+
+  .fighter-card:hover .fighter-sprite {
+    transform: translateX(-50%) scale(1.1) translateY(-8px);
+    filter: drop-shadow(0 0 20px currentColor) drop-shadow(0 10px 30px rgba(0,0,0,0.9));
+  }
+
+  /* SCANLINES OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.08) 2px,
+      rgba(0,0,0,0.08) 4px
+    );
+    pointer-events: none;
+    z-index: 997;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--darker); }
+  ::-webkit-scrollbar-thumb { background: var(--blood); }
+
+  /* NAV */
+nav {
+  position: fixed;
+  top: 0; width: 100%;
+  z-index: 1000;
+  padding: 16px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.95), transparent);
+  border-bottom: 1px solid rgba(201,160,48,0.2);
+}
+
+.nav-logo {
+  font-family: 'Black Ops One', cursive;
+  font-size: 1.4rem;
+  color: var(--gold);
+  letter-spacing: 4px;
+  text-shadow: 0 0 20px var(--gold);
+  z-index: 1001;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1001;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+  text-shadow: 0 0 10px var(--gold);
+}
+
+/* ── БУРГЕР ── */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px; height: 40px;
+  background: none;
+  border: 1px solid rgba(201,160,48,0.3);
+  cursor: pointer;
+  gap: 5px;
+  padding: 8px;
+  z-index: 1001;
+  transition: border-color 0.3s;
+}
+
+.burger:hover {
+  border-color: var(--gold);
+}
+
+.burger span {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-origin: center;
+}
+
+/* Анимация в крестик */
+.burger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.burger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Оверлей */
+#navOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 998;
+  backdrop-filter: blur(2px);
+}
+#navOverlay.active {
+  display: block;
+}
+
+/* ── МОБИЛЬНЫЙ НАВ ── */
+@media (max-width: 900px) {
+  nav { padding: 14px 20px; }
+
+  .burger { display: flex; }
+
+  .nav-links {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(0,0,0,0.97);
+    border-bottom: 1px solid rgba(201,160,48,0.2);
+    padding: 80px 24px 32px;
+    z-index: 10001;
+    transform: translateY(-110%);
+    transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(201,160,48,0.08);
+  }
+
+  .nav-links a {
+  display: block;
+  padding: 16px 0;
+  font-size: 1.1rem;
+  letter-spacing: 5px;
+  color: var(--gold) !important;
+}
+
+  .nav-links a:hover {
+    background: rgba(201,160,48,0.05);
+  }
+}
+
+@media (max-width: 768px) {
+  #heroScorpion {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-position: center 25% !important;
+    opacity: 0.45 !important;
+    left: 0 !important;
+    right: auto !important;
+  }
+}

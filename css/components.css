@@ -1,0 +1,716 @@
+/* ============================================================
+   components.css — саундборд, мемы, лор, интерактив
+   ============================================================ */
+
+/* ── Expandable bio ── */
+.mbio-short { cursor:pointer; }
+.mbio-short::after {
+  content:' [читать полностью ▼]';
+  color:var(--gold);font-size:.8rem;letter-spacing:1px;opacity:.7;
+}
+.mbio-short.expanded::after { content:' [свернуть ▲]'; }
+.mbio-full { display:none;margin-top:10px;padding-top:10px;border-top:1px solid rgba(201,160,48,.15); }
+.mbio-short.expanded + .mbio-full { display:block; }
+
+.meme-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Soundboard ── */
+.sb-category    { margin-bottom: 36px; }
+.sb-cat-label   {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem; letter-spacing: 4px;
+  color: var(--gold); margin-bottom: 12px;
+  border-bottom: 1px solid rgba(201,160,48,0.2);
+  padding-bottom: 6px;
+}
+.sb-buttons     { display: flex; flex-wrap: wrap; gap: 10px; }
+.sb-btn {
+  padding: 10px 20px;
+  background: rgba(204,0,0,0.08);
+  border: 1px solid rgba(204,0,0,0.4);
+  color: var(--text);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem; letter-spacing: 2px;
+  cursor: pointer;
+  clip-path: polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%);
+  transition: all 0.2s;
+}
+.sb-btn:hover   {
+  background: rgba(204,0,0,0.25);
+  border-color: var(--blood);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.sb-btn:active  { transform: scale(0.96); }
+
+/* ── Memes ── */
+.memes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.meme-card {
+  aspect-ratio: 1;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(201,160,48,0.1);
+  transition: transform 0.3s, border-color 0.3s;
+}
+.meme-card:hover {
+  transform: scale(1.03);
+  border-color: rgba(201,160,48,0.4);
+}
+.meme-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.meme-card:hover img { transform: scale(1.08); }
+
+/* ── Meme overlay ── */
+#memeOverlay.active { display: flex !important; }
+
+/* ── Easter eggs ── */
+#pitMoon:hover {
+  box-shadow: 0 0 40px rgba(240,192,64,0.9);
+}
+
+@keyframes silhouette-fly {
+  0%   { right: -60px; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { right: 110%; opacity: 0; }
+}
+
+@keyframes easter-glitch {
+  0%,100% { transform: translate(0); filter: none; }
+  20%  { transform: translate(-4px, 2px); filter: hue-rotate(90deg); }
+  40%  { transform: translate(4px, -2px); filter: hue-rotate(180deg); }
+  60%  { transform: translate(-2px, 4px); filter: hue-rotate(270deg) brightness(2); }
+  80%  { transform: translate(2px, -4px); filter: hue-rotate(0deg); }
+}
+
+@keyframes easter-scanlines {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 100px; }
+}
+
+.glitch-active {
+  animation: easter-glitch 0.1s infinite;
+}
+
+#easterOverlay.active {
+  display: flex !important;
+  pointer-events: all;
+}
+
+#easterContent.visible {
+  transform: scale(1) !important;
+}
+
+@keyframes toasty-bounce {
+  0%   { transform: translateX(120px); }
+  20%  { transform: translateX(0); }
+  80%  { transform: translateX(0); }
+  100% { transform: translateX(120px); }
+}
+
+#toastyBox {
+  position: fixed;
+  bottom: 60px;
+  right: 0;
+  z-index: 20001;
+  transform: translateX(120px);
+  pointer-events: none;
+  text-align: center;
+}
+
+#toastyBox.active {
+  animation: toasty-bounce 2.5s ease forwards;
+}
+
+#toastyBox img {
+  width: 100px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 10px #ff8800);
+}
+
+#toastyBox .toasty-text {
+  font-family: 'Black Ops One', cursive;
+  font-size: 1rem;
+  color: #ff8800;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px #ff8800;
+}
+/* ── LORE ── */
+#lore { padding: 100px 48px; background: linear-gradient(to bottom, #000, #050005, #000); }
+
+.lore-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+.lore-tab {
+  padding: 10px 24px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  cursor: pointer;
+  border: 1px solid rgba(201,160,48,0.2);
+  color: rgba(232,213,176,0.5);
+  background: transparent;
+  transition: all 0.3s;
+  clip-path: polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%);
+}
+
+.lore-tab:hover {
+  border-color: rgba(201,160,48,0.5);
+  color: var(--gold);
+}
+
+.lore-tab.active {
+  background: rgba(201,160,48,0.1);
+  border-color: var(--gold);
+  color: var(--gold);
+  text-shadow: 0 0 10px rgba(201,160,48,0.5);
+}
+
+.lore-content {
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeInUp 0.4s ease;
+}
+
+.lore-block {
+  display: none;
+}
+
+.lore-block.active {
+  display: block;
+}
+
+.lore-lead {
+  font-family: 'Black Ops One', cursive;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--blood);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.lore-text {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: rgba(232,213,176,0.7);
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.lore-quote {
+  border-left: 3px solid var(--blood);
+  padding: 16px 24px;
+  margin: 28px 0;
+  background: rgba(204,0,0,0.05);
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  color: var(--gold);
+}
+
+.lore-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.lore-card {
+  background: rgba(10,0,0,0.6);
+  border: 1px solid rgba(201,160,48,0.15);
+  padding: 20px;
+  transition: border-color 0.3s;
+}
+
+.lore-card:hover {
+  border-color: rgba(201,160,48,0.4);
+}
+
+.lore-card-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.lore-card-text {
+  font-size: .88rem;
+  line-height: 1.6;
+  color: rgba(232,213,176,0.55);
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  #lore { padding: 60px 20px; }
+  .lore-tabs { gap: 6px; }
+  .lore-tab { padding: 8px 16px; font-size: .85rem; }
+}
+/* ── Meme overlay active ── */
+#memeOverlay.active {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Easter overlay active ── */
+#easterOverlay.active {
+  display: flex !important;
+  pointer-events: all;
+  background: rgba(0,0,0,0.92) !important;
+}
+
+#easterContent.visible {
+  transform: scale(1) !important;
+}
+
+/* ── Meme flex center ── */
+.meme-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ── FATALITY GENERATOR ── */
+#fatality-gen {
+  padding: 100px 48px;
+  background: radial-gradient(ellipse at 50% 0%, #1a0000 0%, #000 60%);
+}
+
+.fg-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Выбор бойца */
+.fg-select-wrap { text-align: center; }
+.fg-label {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem; letter-spacing: 4px;
+  color: var(--gold); margin-bottom: 16px;
+}
+.fg-fighters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.fg-fighter-btn {
+  padding: 8px 16px;
+  background: rgba(204,0,0,0.06);
+  border: 1px solid rgba(204,0,0,0.25);
+  color: rgba(232,213,176,0.6);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600; font-size: .8rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s;
+  clip-path: polygon(4px 0,100% 0,calc(100% - 4px) 100%,0 100%);
+}
+.fg-fighter-btn:hover {
+  border-color: var(--blood);
+  color: white;
+  background: rgba(204,0,0,0.15);
+}
+.fg-fighter-btn.selected {
+  background: rgba(204,0,0,0.25);
+  border-color: var(--blood);
+  color: var(--gold);
+  box-shadow: 0 0 12px rgba(204,0,0,0.3);
+}
+
+/* Арена */
+.fg-arena {
+  background: #050000;
+  border: 1px solid rgba(201,160,48,0.2);
+  padding: 24px;
+  position: relative;
+  min-height: 320px;
+}
+
+/* Топ бар */
+.fg-top-bar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.fg-health-wrap { display: flex; flex-direction: column; gap: 4px; }
+.fg-enemy { text-align: right; }
+.fg-name {
+  font-family: 'Bebas Neue', cursive;
+  font-size: .85rem; letter-spacing: 3px;
+  color: var(--gold);
+}
+.fg-name-right { text-align: right; }
+.fg-health-bar {
+  height: 16px;
+  background: #1a0000;
+  border: 1px solid rgba(201,160,48,0.2);
+  overflow: hidden;
+}
+.fg-health-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--blood), var(--fire));
+  transition: width 0.5s ease;
+}
+.fg-health-enemy {
+  background: linear-gradient(to right, #333, #555);
+  margin-left: auto;
+}
+.fg-timer {
+  font-family: 'Black Ops One', cursive;
+  font-size: 2.5rem;
+  color: var(--gold);
+  text-shadow: 0 0 20px var(--gold);
+  min-width: 40px;
+  text-align: center;
+  line-height: 1;
+}
+.fg-timer.urgent { color: var(--blood); animation: fatality-pulse 0.5s infinite; }
+
+/* Бойцы на арене */
+.fg-fighters-arena {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 140px;
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.fg-sprite-player {
+  height: 120px;
+  width: auto;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 10px rgba(204,0,0,0.4));
+}
+.fg-enemy-sprite {
+  font-size: 64px;
+  filter: drop-shadow(0 0 10px rgba(100,0,0,0.8));
+  animation: enemy-shake 0.5s ease-in-out infinite;
+  opacity: 0.6;
+}
+@keyframes enemy-shake {
+  0%,100% { transform: translateX(0) rotate(0deg); }
+  25% { transform: translateX(-3px) rotate(-2deg); }
+  75% { transform: translateX(3px) rotate(2deg); }
+}
+
+/* Экран состояния */
+.fg-screen {
+  text-align: center;
+  margin-bottom: 16px;
+  min-height: 60px;
+}
+.fg-screen-title {
+  font-family: 'Black Ops One', cursive;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--blood);
+  letter-spacing: 6px;
+  text-shadow: 0 0 30px rgba(204,0,0,0.6);
+  animation: fatality-pulse 1.5s ease-in-out infinite;
+}
+.fg-screen-sub {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  color: rgba(232,213,176,0.4);
+  margin-top: 6px;
+}
+
+/* Комбо полоска */
+.fg-combo-strip {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-height: 44px;
+  margin-bottom: 20px;
+}
+.fg-combo-btn {
+  width: 44px; height: 44px;
+  border: 2px solid rgba(201,160,48,0.3);
+  background: rgba(10,0,0,0.8);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  font-family: 'Bebas Neue', cursive;
+  font-size: .75rem;
+  color: rgba(232,213,176,0.4);
+  letter-spacing: 1px;
+  transition: all 0.2s;
+  position: relative;
+}
+.fg-combo-btn.hit {
+  border-color: #44ff44;
+  background: rgba(0,80,0,0.4);
+  color: #44ff44;
+  box-shadow: 0 0 12px rgba(0,255,0,0.4);
+}
+.fg-combo-btn.miss {
+  border-color: var(--blood);
+  background: rgba(80,0,0,0.4);
+  color: var(--blood);
+  animation: miss-shake 0.3s ease;
+}
+@keyframes miss-shake {
+  0%,100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* Кнопка старт */
+.fg-start-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 14px 48px;
+  font-family: 'Black Ops One', cursive;
+  font-size: 1.4rem;
+  letter-spacing: 6px;
+  background: var(--blood);
+  color: white;
+  border: none;
+  cursor: pointer;
+  clip-path: polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);
+  transition: all 0.3s;
+}
+.fg-start-btn:hover {
+  background: var(--fire);
+  transform: scale(1.03);
+  box-shadow: 0 0 30px rgba(204,0,0,0.5);
+}
+.fg-start-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Результат */
+.fg-result {
+  text-align: center;
+  font-family: 'Black Ops One', cursive;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  letter-spacing: 4px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  transition: all 0.3s;
+}
+
+/* Геймпад */
+.fg-gamepad {
+  display: none; /* показывается только на мобиле */
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(10,0,0,0.6);
+  border: 1px solid rgba(201,160,48,0.15);
+  gap: 24px;
+}
+
+.fg-dpad {
+  display: grid;
+  grid-template-columns: repeat(3, 52px);
+  grid-template-rows: repeat(3, 52px);
+  gap: 4px;
+}
+.fg-dpad-btn {
+  background: rgba(40,0,0,0.8);
+  border: 1px solid rgba(201,160,48,0.3);
+  color: var(--gold);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s;
+  border-radius: 4px;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.fg-dpad-center { background: rgba(20,0,0,0.5); border-color: transparent; cursor: default; }
+.fg-dpad-up    { grid-column: 2; grid-row: 1; }
+.fg-dpad-left  { grid-column: 1; grid-row: 2; }
+.fg-dpad-center{ grid-column: 2; grid-row: 2; }
+.fg-dpad-right { grid-column: 3; grid-row: 2; }
+.fg-dpad-down  { grid-column: 2; grid-row: 3; }
+
+.fg-dpad-btn:active, .fg-dpad-btn.pressed {
+  background: rgba(204,0,0,0.4);
+  border-color: var(--blood);
+  transform: scale(0.93);
+}
+
+.fg-action-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.fg-btn-row { display: flex; gap: 8px; }
+.fg-action-btn {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  border: 2px solid;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.1s;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.fg-btn-hp { background: rgba(204,0,0,0.2);   border-color: #cc2200; color: #ff4444; }
+.fg-btn-hk { background: rgba(0,80,200,0.2);  border-color: #0044cc; color: #4488ff; }
+.fg-btn-lp { background: rgba(200,150,0,0.2); border-color: #cc9900; color: #ffcc44; }
+.fg-btn-lk { background: rgba(0,150,50,0.2);  border-color: #009933; color: #44cc66; }
+.fg-action-btn:active { transform: scale(0.9); }
+
+/* Подсказка клавиатуры */
+.fg-keyboard-hint {
+  text-align: center;
+  padding: 16px;
+  background: rgba(10,0,0,0.4);
+  border: 1px solid rgba(201,160,48,0.1);
+}
+.fg-hint-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: .85rem; letter-spacing: 4px;
+  color: rgba(201,160,48,0.4);
+  margin-bottom: 10px;
+}
+.fg-hint-keys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+.fg-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; height: 32px;
+  background: rgba(201,160,48,0.1);
+  border: 1px solid rgba(201,160,48,0.3);
+  border-radius: 4px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: .85rem;
+  color: var(--gold);
+}
+.fg-key-label {
+  font-size: .7rem;
+  letter-spacing: 1px;
+  color: rgba(232,213,176,0.35);
+  margin-right: 8px;
+}
+
+/* Мобиль */
+@media (max-width: 768px) {
+  #fatality-gen { padding: 60px 16px; }
+  .fg-gamepad { display: flex; }
+  .fg-keyboard-hint { display: none; }
+  .fg-arena { padding: 16px; }
+  .fg-fighters-arena { height: 110px; }
+  .fg-sprite-player { height: 95px; }
+}
+
+/* Победный экран */
+.fg-victory-flash {
+  animation: victory-flash 0.5s ease 3;
+}
+@keyframes victory-flash {
+  0%,100% { background: #050000; }
+  50% { background: #1a0000; }
+}
+/* ============================================================
+   HUB SECTIONS — сгруппированные вкладки
+   ============================================================ */
+
+.hub-section {
+  padding: 80px 48px 60px;
+  background: linear-gradient(to bottom, #000, #050005, #000);
+  position: relative;
+}
+
+/* Разделитель между хабами */
+.hub-section + .hub-section {
+  border-top: 1px solid rgba(201,160,48,0.08);
+}
+
+/* Таб-кнопки */
+.hub-tabs {
+  display: flex;
+  gap: 4px;
+  margin: 32px 0 0;
+  border-bottom: 1px solid rgba(201,160,48,0.15);
+}
+
+.hub-tab {
+  padding: 12px 28px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: rgba(232,213,176,0.4);
+  transition: all 0.25s;
+  margin-bottom: -1px;
+  position: relative;
+}
+
+.hub-tab:hover {
+  color: var(--gold);
+  background: rgba(201,160,48,0.05);
+}
+
+.hub-tab.active {
+  color: var(--gold);
+  border-bottom-color: var(--blood);
+  background: rgba(201,160,48,0.06);
+}
+
+/* Панели контента */
+.hub-panel {
+  display: none;
+  padding-top: 40px;
+  animation: fadeInUp 0.35s ease;
+}
+
+.hub-panel.active {
+  display: block;
+}
+
+/* Мобиль */
+@media (max-width: 768px) {
+  .hub-section { padding: 60px 16px 40px; }
+  .hub-tab { padding: 10px 16px; font-size: .85rem; letter-spacing: 2px; }
+  .hub-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
+#moonSilhouette img {
+  height: auto;
+  display: block;
+}
