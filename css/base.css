@@ -181,20 +181,22 @@ nav {
   .burger { display: flex; }
 
   .nav-links {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: rgba(0,0,0,0.97);
-    border-bottom: 1px solid rgba(201,160,48,0.2);
-    padding: 80px 24px 32px;
-    z-index: 10001;
-    transform: translateY(-110%);
-    transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
-    backdrop-filter: blur(10px);
-  }
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  bottom: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: rgba(0,0,0,0.98);
+  border-bottom: none;
+  padding: 70px 24px 24px;
+  z-index: 10001;
+  transform: translateY(-110%);
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  backdrop-filter: blur(10px);
+  overflow-y: auto;
+}
 
   .nav-links.active {
     transform: translateY(0);
