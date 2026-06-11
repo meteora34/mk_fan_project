@@ -1362,15 +1362,24 @@ function filterFighters(query) {
 }
 // ── Бургер меню ───────────────────────────────────────────────
 function toggleNav() {
-  const btn   = document.getElementById('burgerBtn');
-  const links = document.getElementById('navLinks');
+  console.log("Клик по бургеру СРАБОТАЛ!"); // <- Проверим, вызывается ли функция
+
+  const btn     = document.getElementById('burgerBtn');
+  const links   = document.getElementById('navLinks');
   const overlay = document.getElementById('navOverlay');
+
+  if (!btn || !links || !overlay) {
+    console.log("ОШИБКА: Один из элементов не найден в HTML!", { btn, links, overlay });
+    return;
+  }
 
   btn.classList.toggle('active');
   links.classList.toggle('active');
   overlay.classList.toggle('active');
-  document.body.style.overflow =
-    links.classList.contains('active') ? 'hidden' : '';
+
+  console.log("Текущие классы меню после клика:", links.className); // <- Проверим, добавился ли active
+
+  document.body.style.overflow = links.classList.contains('active') ? 'hidden' : '';
 }
 
 function closeNav() {
